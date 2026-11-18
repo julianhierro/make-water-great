@@ -31,7 +31,7 @@
           .then(function (r) { if (!r.ok) throw new Error(r.status); location.href = form.dataset.thanks; })
           .catch(function () { btn.disabled = false; status.textContent = 'That didn’t send. Please try again or give us a call.'; });
       } else if (email) {
-        var body = ['name', 'phone', 'email', 'zip', 'water_source', 'issues', 'message'].filter(function (k) { return data[k]; }).map(function (k) { return k + ': ' + data[k]; }).join('\n');
+        var body = ['name', 'email', 'zip', 'water_source', 'issues', 'message'].filter(function (k) { return data[k]; }).map(function (k) { return k + ': ' + data[k]; }).join('\n');
         location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Free water test request') + '&body=' + encodeURIComponent(body);
       } else {
         status.textContent = 'This form isn’t connected yet, so your details were not sent.';

@@ -39,11 +39,10 @@
   <div class="card form-card"><h3>Send us a message</h3><form class="lead-form" data-lead data-endpoint="" data-email="" data-thanks="../thanks/">
   <div class="grid-2">
     <label>Name<input name="name" autocomplete="name" required></label>
-    <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
-    <label>Email<input name="email" type="email" autocomplete="email"></label>
+    <label>Email<input name="email" type="email" autocomplete="email" required></label>
     <label>ZIP code<input name="zip" inputmode="numeric" autocomplete="postal-code" required></label>
+    <label>Where does your water come from?<select name="water_source"><option>City water</option><option>Private well</option><option>Not sure</option></select></label>
   </div>
-  <label>Where does your water come from?<select name="water_source"><option>City water</option><option>Private well</option><option>Not sure</option></select></label>
   
   <label>Anything else we should know? <span class="opt">(optional)</span><textarea name="message" rows="2"></textarea></label>
   <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
