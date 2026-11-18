@@ -73,3 +73,13 @@
     update();
   });
 })();
+
+// "Chat with us" buttons open the GoHighLevel chat widget; fall back to email if it hasn't loaded.
+document.querySelectorAll('[data-open-chat]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var lc = window.leadConnector && window.leadConnector.chatWidget;
+    if (lc && typeof lc.openWidget === 'function') { lc.openWidget(); return; }
+    var mail = document.querySelector('.lead-chat a[href^="mailto:"]');
+    if (mail) location.href = mail.href;
+  });
+});
